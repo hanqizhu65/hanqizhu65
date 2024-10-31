@@ -1,0 +1,560 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Campus Map of HKU">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="1024"/>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" >
+
+
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icon114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icon72.png">
+<link rel="apple-touch-icon-precomposed" href="images/icon57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/icon114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/icon72.png">
+<link rel="apple-touch-icon" href="images/icon57.png">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="cleartype" content="on">
+ <link rel="stylesheet" href="css/add2home.css">
+  <script type="text/javascript" src="js/add2home.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34535404-1']);
+  _gaq.push(['_trackPageview']);
+
+  
+  
+</script>  
+  
+    
+
+
+<link rel="stylesheet" href="menu.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+
+
+
+<link rel="apple-touch-startup-image"
+      media="(device-width: 768px)
+         and (orientation: landscape)"
+      href="images/tabletstartupp-748x1024.png">
+
+<link rel="apple-touch-startup-image"
+      media="(device-width: 768px)
+         and (orientation: landscape)
+         and (-webkit-device-pixel-ratio: 2)"
+      href="images/tabletstartupp-1496x2048.png">	  
+
+<!--[if !IE | gte IE 9]>
+<link rel="stylesheet" href="form.css" type="text/css" media="screen" />
+<!--<![endif]-->
+
+<!--[if IE 6]>
+<style>
+body {behavior: url("csshover3.htc");}
+#menu li .drop {background:url("img/drop.gif") no-repeat right 8px; 
+</style>
+<![endif]-->
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC9haK1S8KKj7svug6Ft9cOSu_O9y7rcTw&language=en"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript" src="oms.min.js"></script>	
+<script type="text/javascript" src="jquery.popupWindow.js"></script>	
+<script type="text/javascript" src="jquery.i18n.js"></script>	
+
+
+<script type="text/javascript" src="infobubble.js"></script>
+<script src="clearbox.js" type="text/javascript"></script>
+
+<script src="map.min.js"></script>
+<script src="buildingcircle.js.php"></script>
+  
+<link rel="stylesheet" href="css/add2home.css">
+<script type="text/javascript" src="js/add2home.js" charset="utf-8"></script>  
+
+<link rel="stylesheet" type="text/css" media="screen" href="browser-detection.css" />
+<script type="text/javascript" src="browser-detection.js"></script>
+
+
+<title>HKU Campus Map</title>
+<script>
+
+
+function getParameterByName(name)
+{
+  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+  var regexS = "[\\?&]" + name + "=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var results = regex.exec(window.location.search);
+  if(results == null)
+    return "";
+  else
+    return decodeURIComponent(results[1].replace(/\+/g, " "));
+}	
+		
+function menucampusreset()
+	{
+	$('#menucampus').removeClass('menulihover');
+	$('#menucampus_box').slideUp('normal', function(){
+		$('#menucampus_box').removeClass('menulihoveralign_right');
+		$('#menucampus_box').toggle();
+		
+	});
+}
+	
+if (getParameterByName('desktop') != '1')
+	{
+	
+	(function(a,b){if(/android.+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|meego.+mobile|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(di|rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))window.location=b})(navigator.userAgent||navigator.vendor||window.opera,'http://www.maps.hku.hk/mobile?desktop=1');
+	//console.log('rediret');
+	}	
+	
+$(document).ready(function() {
+	
+	
+
+	$('.popupwindows').popupWindow({ 
+		width:800, 
+		centerBrowser:1,
+		resizable:1,
+		scrollbars:1
+	}); 
+	
+	$('.popupwindows-1024').popupWindow({ 
+		width:1024, 
+		height:600,
+		centerBrowser:1,
+		resizable:1,
+		scrollbars:1
+	}); 
+		$('#menucampus').addClass('menulihover');
+	$('#menucampus_box').addClass('menulihoveralign_right');
+	
+	setTimeout('menucampusreset()', 2000);
+	
+	
+i18n_dict = {"Info" : "Info","Buildings" : "Buildings","Departments" : "Departments","Campuese and Buildings" : "Campuese/ Buildings","Facilities" : "Facilities","How to go" : "Driver's Route","Driver's Route to HKU" : "Driver's Route to HKU","Address" : "Address","Tel" : "Tel","Email" : "Email","Web" : "Web","Start" : "Start","To" : "To","Sassoon Road Campus" : "Sassoon Road Campus","Main Campus" : "Main Campus","Other Campuses" : "Other Campuses","HKU Home" : "HKU Home","Language" : "Language","Location" : "Location","Campus" : "Campus","Transportation to HKU" : "Transportation to HKU","Drive to HKU" : "Drive to HKU","Other location" : "Other location","Outside Campus" : "Outside Campus","Inside Campus" : "Inside Campus","Drive within Main Campus" : "Drive Within Main Campus","Facilities in our campus" : "Facilities in our campus","special assistance" : "For enquiries or any special assistance, please call Security Control Centre's 24-hour hotline (3917-2882).","Copyright" : " ","Privacy Policy" : "Privacy Policy","Search" : "Search","Click Here" : "Click Here","hketransport" : "Hong Kong eTransport","Map for Visually Impaired Person" : "Map for wheelchair users","Print" : "Print Version","sharelink" : "Paste link in email or IM"};
+
+$.i18n.setDictionary(i18n_dict);
+	
+	
+	initialize();
+	var ondemandid = getParameterByName('id');
+	var ondemandfacility_type_id = getParameterByName('facility_type_id');
+	
+	if ((getParameterByName('type')=='Locations') && getParameterByName('id'))
+	{
+		setTimeout("fetchMapPoint(" + ondemandid + ",'Locations')",3000);
+		$('#navmenutab_Buildings').trigger('click');
+	}
+	
+	if ((getParameterByName('type')=='Department') && getParameterByName('id'))
+	{
+		setTimeout("fetchMapPoint(" + ondemandid + ",'Department')",3000);
+		$('#navmenutab_Departments').trigger('click');
+	}
+	
+	if ((getParameterByName('type')=='facility') && getParameterByName('id'))
+	{
+		//togglefacilities("#aaa", 1)
+		$('#navmenutab_Facilities').trigger('click');
+		setTimeout("toggleOnfacilities('NavMenu-facilities-" + ondemandfacility_type_id + "', " + ondemandfacility_type_id + " )", 1000);
+		//console.log( "toggleOnfacilities('NavMenu-facilities-" + ondemandfacility_type_id + "')" );
+		setTimeout("fetchMapPoint(" + ondemandid + ",'facility')",3000);
+		
+	}
+	
+	
+	
+	(function ($) {
+
+	  // Log all jQuery AJAX requests to Google Analytics
+	  $(document).ajaxSend(function(event, xhr, settings){
+		if (typeof _gaq !== "undefined" && _gaq !== null) {
+		  _gaq.push(['_trackPageview', settings.url]);
+		}
+	  });
+
+	})(jQuery);
+		
+	
+});
+
+
+
+</script>
+</head>
+
+<body >
+
+<div id="headerbar">
+<div class="offscreen"></div>
+
+
+<span style="float:right; padding-right:10px;">
+
+<a target="_blank" href="downloads/201501hkumap.jpg" style="color:#ffffff;">Print Version</a>
+<!--
+<a target="_blank" href="downloads/main_campus_en.pdf" style="color:#ffffff;">Print Version</a>
+-->
+<!--
+<a href="http://www.hku.hk" style="color:#ffffff;" target="_blank">HKU Home</a>
+-->
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="index.php?lang=zh_hant" style="color:#ffffff;">中文</a>
+</span>
+</div>
+<div id="header">
+<a href="http://www.hku.hk" target="_blank"><img src="images/hkumap_logo.png" alt="HKU Logo, back to HKU Home Page" ></a>
+<ul id="menu">
+	<li class="menu_right"><a href="#" class="drop"><img src="images/en/menu_facilities.png" border=0 ></a><!-- Begin 4 columns Item -->
+    
+        <div class="dropdown_4columns align_right"><!-- Begin 3 columns container -->
+            
+            <div class="col_4">
+                <h2>Facilities in our campus</h2>
+            </div>
+            
+				<div class="col_2"><ul class="borderbottom"><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-1','1')"><img  img src="./media/transfer/FacilityType_5000af8ecbc39_apartment-3.png"></div><div style="width:200px; min-height: 30px; display:block;">Accommodation</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-2','2')"><img  img src="./media/transfer/FacilityType_5008f71d87b8c_bigcity.png"></div><div style="width:200px; min-height: 30px; display:block;">Amenities Centre</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-27','27')"><img  img src="./media/transfer/FacilityType_55ee46bce52e3_bficon-med-2.png"></div><div style="width:200px; min-height: 30px; display:block;">Baby Care Room</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-3','3')"><img  img src="./media/transfer/FacilityType_5000aec8542a7_bank.png"></div><div style="width:200px; min-height: 30px; display:block;">Banking Services</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-4','4')"><img  img src="./media/transfer/FacilityType_4fcb91aba1733_book.png"></div><div style="width:200px; min-height: 30px; display:block;">Bookstore</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-13','13')"><img  img src="./media/transfer/FacilityType_5000b1ccddf67_fastfood.png"></div><div style="width:200px; min-height: 30px; display:block;">Catering Outlets</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-5','5')"><img  img src="./media/transfer/FacilityType_5000b0a3912b3_computers.png"></div><div style="width:200px; min-height: 30px; display:block;">Computing Services</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-6','6')"><img  img src="./media/transfer/FacilityType_5000af97c02d6_firstaid.png"></div><div style="width:200px; min-height: 30px; display:block;">Health Services</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-8','8')"><img  img src="./media/transfer/FacilityType_5000b3d5429a3_library.png"></div><div style="width:200px; min-height: 30px; display:block;">Libraries</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-29','29')"><img  img src="./media/transfer/FacilityType_57569683bcac7_lift.png"></div><div style="width:200px; min-height: 30px; display:block;">Lift</div></a></li></ul></div>
+<div class="col_2"><ul class="borderbottom"><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-10','10')"><img  img src="./media/transfer/FacilityType_5000b3bdd3a9c_house (1).png"></div><div style="width:200px; min-height: 30px; display:block;">Museums</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-11','11')"><img  img src="./media/transfer/FacilityType_4fcb92072cf19_parkinggarage.png"></div><div style="width:200px; min-height: 30px; display:block;">Parking</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-12','12')"><img  img src="./media/transfer/FacilityType_5000af7c42500_printer-2.png"></div><div style="width:200px; min-height: 30px; display:block;">Photo-copying</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-9','9')"><img  img src="./media/transfer/FacilityType_5000aed4b6cfd_postal.png"></div><div style="width:200px; min-height: 30px; display:block;">Postal Service</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-18','18')"><img  img src="./media/transfer/FacilityType_5000b05253de9_tennis.png"></div><div style="width:200px; min-height: 30px; display:block;">Sports</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-14','14')"><img  img src="./media/transfer/FacilityType_5000b3f857c54_group-2 (1).png"></div><div style="width:200px; min-height: 30px; display:block;">Student Co-operative</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-15','15')"><img  img src="./media/transfer/FacilityType_5000b1f32d1f7_supermarket.png"></div><div style="width:200px; min-height: 30px; display:block;">Supermarket</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-25','25')"><img  img src="./media/transfer/FacilityType_52c2a28d8b5c7_uvision_pin.png"></div><div style="width:200px; min-height: 30px; display:block;">U-Vision</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-16','16')"><img  img src="./media/transfer/FacilityType_5000b23e51edd_conference.png"></div><div style="width:200px; min-height: 30px; display:block;">Venues & Bookings</div></a></li><li><div style="width:40px; min-height: 30px; float:left; display:block;clear:left;"><a href="#" onclick="toggleOnfacilities('NavMenu-facilities-20','20')"><img  img src="./media/transfer/FacilityType_5000b27502f23_conference (1).png"></div><div style="width:200px; min-height: 30px; display:block;">Venues & Bookings  (for staff/student functions only)</div></a></li></ul></div>
+        </div><!-- End 4 columns container -->
+        
+    </li><!-- End 4 columns Item -->
+    
+    
+	<li class="menu_right"><a href="#" class="drop"><img src="images/en/menu_transportation.png" border=0 ></a>
+	<!--
+	<a href="#" class="drop" onclick="CB_Open('href=transportation.html,,width=500,,height=400,,type=iframe')">
+	-->
+	<div class="dropdown_2columns align_right">
+	<div class="col_2">
+	<h2>Transportation to HKU</h2>
+	
+	</div>
+	</div>
+    
+		<div class="dropdown_2columns align_right">
+		
+				<div class="col_2">
+				      <h2>Transportation to HKU</h2>
+				</div>
+<!--                <div class="col_2">
+                    <ul class="simple">
+					                        <li><a target="_blank" class="popupwindows external" href="http://maps.google.com.hk/maps?f=d&source=s_d&saddr=Airport&daddr=Hong+Kong+University,+Pok+Fu+Lam&hl=zh-TW&geocode=FQWCVAEdiITKBiG4PFQEZRDLIg%3BFUcHVAEd7JnNBiHYyG_N0_VILA&aq=2&oq=hong+kong+u&sll=22.324205,114.052465&sspn=0.13577,0.264187&vpsrc=0&brcurrent=3,0x34015525e747cd15:0xf9bbe811afd9d3dd,0&dirflg=r&ttype=dep&noexp=0&noal=0&sort=def&mra=ls&ie=UTF8&ll=22.32086,114.049244&spn=0.135773,0.264187&t=m&z=13&start=0&ei=AT7YT_J_pqSIB6u4kLIN&pw=2">Airport</a></li>
+                        <li><a target="_blank" class="popupwindows external" href="http://maps.google.com.hk/maps?f=d&source=s_d&saddr=Admiralty&daddr=Hong+Kong+University,+Pok+Fu+Lam&hl=zh-TW&geocode=FdT1UwEd7gbOBikDMCYSZwAENDGWNOJxY33IOA%3BFUcHVAEd7JnNBiHYyG_N0_VILA&aq=&sll=22.32086,114.049244&sspn=0.135773,0.264187&vpsrc=0&brcurrent=3,0x3404007e811b3f95:0x47c863b8fcf83784,0,0x3403ff80eb6f67b1:0x46c3c89b39011247&dirflg=r&ttype=dep&noexp=0&noal=0&sort=def&mra=ls&ie=UTF8&t=m&z=16&start=0&ei=6oDYT5bTOoaeiAea9bnfDQ&pw=2">Admiralty</a></li>
+                        <li><a target="_blank" class="popupwindows external" href="http://maps.google.com.hk/maps?f=d&source=s_d&saddr=Causeway+Bay&daddr=Hong+Kong+University,+Pok+Fu+Lam&hl=zh-TW&geocode=FdT5UwEdYEPOBil_rG2zVQAENDFqDBLnsag_Ag%3BFUcHVAEd7JnNBiHYyG_N0_VILA&aq=&sll=22.280845,114.151765&sspn=0.016977,0.033023&vpsrc=0&brcurrent=3,0x34040064a31dd1bd:0x5007a73bdeccb552,0,0x3403ff80eb6f67b1:0x46c3c89b39011247&dirflg=r&ttype=dep&noexp=0&noal=0&sort=def&mra=ls&ie=UTF8&t=m&z=15&start=0&ei=DIHYT-j_KYmZiAeL7oTZDQ&pw=2">Causeway Bay</a></li>
+                        <li><a target="_blank" class="popupwindows external" href="http://maps.google.com.hk/maps?f=d&source=s_d&saddr=Central&daddr=Hong+Kong+University,+Pok+Fu+Lam&hl=zh-TW&geocode=Fdj-UwEd6OnNBim90R2jZAAENDFStczeO6cHUA%3BFUcHVAEd7JnNBiHYyG_N0_VILA&aq=&sll=22.280845,114.15927&sspn=0.033953,0.066047&vpsrc=0&brcurrent=3,0x3404007e811b3f95:0x47c863b8fcf83784,0,0x3403ff80eb6f67b1:0x46c3c89b39011247&dirflg=r&ttype=dep&noexp=0&noal=0&sort=def&mra=ls&ie=UTF8&t=m&z=16&start=0&ei=JIHYT66RHOauiQeT97jODQ&pw=2">Central</a></li>
+                        <li><a target="_blank" class="popupwindows external" href="http://maps.google.com.hk/maps?f=d&source=s_d&saddr=China+Hong+Kong+City&daddr=Hong+Kong+University,+Pok+Fu+Lam&hl=zh-TW&geocode=FSBHVAEdaBDOBiEeDAisD3vXCyn3qgu2kgAENDG9bMji1GwcNg%3BFUcHVAEd7JnNBiHYyG_N0_VILA&aq=&sll=22.284205,114.147285&sspn=0.016976,0.033023&vpsrc=0&brcurrent=3,0x3404009533f68457:0x7af391a82a888312,0&dirflg=r&ttype=dep&noexp=0&noal=0&sort=def&mra=ls&ie=UTF8&t=m&z=15&start=0&ei=9IHYT4zlM6iOiAegk6TXDQ&pw=2">China Hong Kong City</a></li>
+                        <li><a target="_blank" class="popupwindows external" href="http://maps.google.com.hk/maps?f=d&source=s_d&saddr=Hung+Hom&daddr=Hong+Kong+University,+Pok+Fu+Lam&hl=zh-TW&geocode=FVZUVAEdOkvOBilvW2j93QAENDEos0OiqLfcog%3BFUcHVAEd7JnNBiHYyG_N0_VILA&aq=&sll=22.296505,114.152345&sspn=0.033949,0.066047&vpsrc=0&brcurrent=3,0x3403ff80eb6f67b1:0x46c3c89b39011247,0&dirflg=r&ttype=dep&noexp=0&noal=0&sort=def&mra=ls&ie=UTF8&ll=22.290129,114.159451&spn=0.033951,0.066047&t=m&z=15&start=0&ei=f4LYT4uqDKetiQeK8tzMDQ&pw=2">Hung Hom</a></li>
+                        <li><a target="_blank" class="popupwindows external" href="http://maps.google.com.hk/maps?f=d&source=s_d&saddr=Lo+Wu&daddr=Hong+Kong+University,+Pok+Fu+Lam&hl=zh-TW&geocode=FYS-VwEdh0HNBikr-LuQ3PUDNDEWkuPct3saMw%3BFUcHVAEd7JnNBiHYyG_N0_VILA&aq=1&oq=lo+w&sll=22.290129,114.159451&sspn=0.033951,0.066047&vpsrc=0&brcurrent=3,0x340405e3635dffe3:0x624a0e6190d6c066,0&dirflg=r&ttype=dep&noexp=0&noal=0&sort=def&mra=ls&ie=UTF8&t=m&z=12&start=0&ei=s4LYT4TLA460iQfc7am-DQ&pw=2">Lo Wu</a></li>
+                        <li><a target="_blank" class="popupwindows external" href="http://maps.google.com.hk/maps?f=d&source=s_d&saddr=Tsim+Sha+Tsui&daddr=Hong+Kong+University,+Pok+Fu+Lam&hl=zh-TW&geocode=Fd0tVAEdUx3OBindQX3I7QAENDHwf2KClsMACg%3BFUcHVAEd7JnNBiHYyG_N0_VILA&aq=&sll=22.402655,114.163075&sspn=0.271386,0.528374&vpsrc=0&brcurrent=3,0x3404009533f68457:0x7af391a82a888312,0&dirflg=r&ttype=dep&noexp=0&noal=0&sort=def&mra=ls&ie=UTF8&t=m&z=15&start=0&ei=34LYT5vKKsaSiAediMDBDQ&pw=2">Tsim Sha Tsui</a></li>					
+					                    </ul>   
+                     
+                </div>
+		-->		
+		<!--		
+				<div class="col_2">
+				      <h3>Other location</h3>
+				</div>
+		-->		
+				<div class="col_2">
+				<a target="_blank" class="popupwindows-1024 external" href="http://hketransport.gov.hk/">
+				Hong Kong eTransport				</a>
+				</div>
+				
+				
+				
+                
+		</div>
+    
+	</li>
+	
+	<li class="menu_right"><a href="#" class="drop"><img src="images/en/menu_driversroute.png" border=0 ></a>
+   
+	<div class="dropdown_2columns align_right">
+	   <!--
+		<div class="col_2">
+			<h2>Driver's Route to HKU</h2>
+		
+	
+		<h3>Drive Within Main Campus</h3>
+		
+		-->
+		
+		<div class="col_2">
+			<ul class="greybox">
+			<li><center>
+			<a href="#"  onclick="showDirectionsInside();">Drive Within Main Campus</a>
+			</center>
+			</li>
+			</ul>
+		</div>
+		<div class="col_2">
+			<ul class="greybox">
+			<li>
+			<center>
+			<a href="#"  onclick="showDirections();">Driver's Route to HKU</a>
+			</center>
+			</li>
+			</ul>
+		</div>
+		
+				<!--
+				<select name="insidedriveroute_origin" id="insidedriveroute_origin" style="font-size:20px;width:250px;">
+					<option value="167">West Gate</option><option value="182">Kotewall Road</option>				</select>
+				</li>
+				<li>
+				<select name="insidedriveroute_destination" id="insidedriveroute_destination" style="font-size:20px;width:250px;">
+				</select>
+				
+				</li>
+				
+			</ul>
+			<ul class="greybox">
+				   <li><center><a href="#" onclick="TopMenuTransportSearch();">Search</a></center></li>
+		</ul>
+		-->
+		
+		
+		<!-- ************************** -->
+		<!--
+		<h3>Drive to HKU</h3>
+		<ul class="greybox">
+					<li><center><a href="#"  onclick="showDirections();">Search</a></center></li>
+		</ul>
+		
+		</div>
+		-->
+		
+		
+	</div>
+	
+	
+	
+	</li>
+	
+	<li class="menu_right" id="menucampus" ><img src="images/en/menu_campus.png" border=0  usemap="#topmenucampus" ><!-- Begin 3 columns Item -->
+    
+        <div class="dropdown_3columns align_right " id="menucampus_box" ><!-- Begin 3 columns container -->
+            
+          
+            <div class="col_3">
+                <!--<h2>Campus</h2>-->
+				<img src="images/en/campusoverview.png" border=0  usemap="#campusoverviewMap" >            </div>
+            
+			<div  class="col_1" style="width:50px;">&nbsp;</div>
+					<div class="col_1">
+							<center>
+						<a href="#" onclick="fetchMapPoint(1,'campus')">
+						<img src="media/filter/s/Photo_4fcb68cce4fb2_5001021.png" width="80" height="80" class="imgshadow" alt="" />
+						</a>
+						<b>Main Campus</b>
+					</center>	
+					</div>
+					<div class="col_1">
+							<center>
+						<a href="#" onclick="fetchMapPoint(2,'campus')">
+						<img src="media/filter/s/Photo_4fcb709d2158c_201101200825203441.png" width="80" height="80" class="imgshadow" alt="" />
+						</a>
+						<b>Sassoon Road</b>
+					</center>	
+					</div>			
+        </div><!-- End 3 columns container -->
+        
+    </li><!-- End 3 columns Item -->
+  <map name="campusoverviewMap" id="campusoverviewMap">
+  <area shape="rect" coords="102,59,229,99" href="#" onclick="fetchMapPoint(7,'campus')" />
+  <area shape="circle" coords="219,98,10" href="#" onclick="fetchMapPoint(7,'campus')" />
+  <area shape="rect" coords="40,140,165,176" href="#" onclick="fetchMapPoint(11,'campus')" />
+  <area shape="rect" coords="41,191,164,210" href="#" onclick="fetchMapPoint(1,'campus')" />
+  <area shape="rect" coords="36,225,164,245" href="#" onclick="fetchMapPoint(10,'campus')" />
+
+  <area shape="circle" coords="199,223,9" href="#" onclick="fetchMapPoint(10,'campus')" />
+  <area shape="circle" coords="213,215,9" href="#" onclick="fetchMapPoint(1,'campus')" />
+  <area shape="circle" coords="230,219,10" href="#" onclick="fetchMapPoint(11,'campus')" />
+  <area shape="rect" coords="66,296,149,328" href="#" onclick="fetchMapPoint(2,'campus')" />  
+  <area shape="circle" coords="216,245,11" href="#" onclick="fetchMapPoint(2,'campus')" />
+  <area shape="rect" coords="152,297,265,332" href="#" onclick="fetchMapPoint(9,'campus')" />
+  <area shape="circle" coords="234,251,10" href="#" onclick="fetchMapPoint(9,'campus')" />
+  <area shape="circle" coords="293,272,12" href="#" onclick="fetchMapPoint(8,'campus')" />
+  <area shape="rect" coords="286,280,404,334" href="#" onclick="fetchMapPoint(8,'campus')" />
+ </map>
+ 
+  <map name="topmenucampus" id="topmenucampus">
+       <area shape="rect" coords="29,20,78,33" href="#"  onclick="fetchMapPoint(1,'campus')" alt="Main campus" />
+	<area shape="rect" coords="79,20,140,33" href="#"  onclick="fetchMapPoint(2,'campus')" alt="Sassoon Road " />
+    	  </map>
+ 
+    <li class="menu_right"><a href="#" class="drop"><img src="images/en/menu_wheelchair.png" border=0  alt='Map for Wheelchair Users' ></a>
+		<div class="dropdown_2columns align_left">
+			<div class="col_2">
+				<ul class="greybox">
+				<li><center>
+				<a target="_blank" href="https://www.estates.hku.hk/campus-information/campus-accessibility/wheelchair-friendly-routes-hku-main-estate">More information</a>
+				</center>
+				</li>
+				</ul>
+			</div>
+		</div>
+  </li>
+ 
+  
+
+
+</ul>
+</div>
+<div id="map_canvas" class="printableArea"></div>
+
+<div id="navmenu-wrapper">
+
+  <div id="navmenutab">
+	  <ul class="tabs">
+			<li style="width:70px;" class="active"><a href="#" class="tab" rel="#tab_1_contents" >Buildings</a></li>
+			<li style="width:85px;"><a href="#" class="tab" rel="#tab_2_contents" >Departments</a></li>
+			<li style="width:65px;"><a href="#" class="tab" rel="#tab_3_contents" id="navmenutab_Facilities">Facilities</a></li>
+	  </ul>
+  </div>
+  <div id="navmenu">
+  <div id="tab_1_contents" class="tab_contents tab_contents_active">
+	  <div class="searchbox">
+		  <span class="searchbox"><input type="text" name="buildingsearchbox" id="buildingsearchbox"></span><span class="searchbtn"><img src="images/search_btn.png"></span>
+	  </div>
+	  <div class="navitemlist">
+	  
+	  
+	 
+	  
+	  <ul id="buildinglist" >
+		  <ul class="navmenusectionheader">Main Campus</ul><ul class="navmenusectionbody"><li class="navmenuhover clickable-a" id="NavMenu-Locations-201"><a rel="Locations;201" href="javascript:void(0);" onclick="fetchMapPoint(201,'Locations')">Centennial Gate</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-195"><a rel="Locations;195" href="javascript:void(0);" onclick="fetchMapPoint(195,'Locations')">Central Podium Levels (CPD)</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-180"><a rel="Locations;180" href="javascript:void(0);" onclick="fetchMapPoint(180,'Locations')">Cheng Yu Tung Tower</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-179"><a rel="Locations;179" href="javascript:void(0);" onclick="fetchMapPoint(179,'Locations')">Chi Wah Learning Commons</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-6"><a rel="Locations;6" href="javascript:void(0);" onclick="fetchMapPoint(6,'Locations')">Chong Yuet Ming Amenities Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-9"><a rel="Locations;9" href="javascript:void(0);" onclick="fetchMapPoint(9,'Locations')">Chong Yuet Ming Chemistry Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-191"><a rel="Locations;191" href="javascript:void(0);" onclick="fetchMapPoint(191,'Locations')">Chong Yuet Ming Fountain</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-12"><a rel="Locations;12" href="javascript:void(0);" onclick="fetchMapPoint(12,'Locations')">Chong Yuet Ming Physics Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-18"><a rel="Locations;18" href="javascript:void(0);" onclick="fetchMapPoint(18,'Locations')">Chow Yei Ching Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-21"><a rel="Locations;21" href="javascript:void(0);" onclick="fetchMapPoint(21,'Locations')">Composite Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-30"><a rel="Locations;30" href="javascript:void(0);" onclick="fetchMapPoint(30,'Locations')">Eliot Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-70"><a rel="Locations;70" href="javascript:void(0);" onclick="fetchMapPoint(70,'Locations')">Fong Shu Chuen Amenities Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-39"><a rel="Locations;39" href="javascript:void(0);" onclick="fetchMapPoint(39,'Locations')">Fung Ping Shan Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-194"><a rel="Locations;194" href="javascript:void(0);" onclick="fetchMapPoint(194,'Locations')">Global Lounge</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-42"><a rel="Locations;42" href="javascript:void(0);" onclick="fetchMapPoint(42,'Locations')">Graduate House</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-45"><a rel="Locations;45" href="javascript:void(0);" onclick="fetchMapPoint(45,'Locations')">Haking Wong Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-54"><a rel="Locations;54" href="javascript:void(0);" onclick="fetchMapPoint(54,'Locations')">Hui Oi Chow Science Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-7"><a rel="Locations;7" href="javascript:void(0);" onclick="fetchMapPoint(7,'Locations')">Hung Hing Ying Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-10"><a rel="Locations;10" href="javascript:void(0);" onclick="fetchMapPoint(10,'Locations')">James Hsioung Lee Science Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-13"><a rel="Locations;13" href="javascript:void(0);" onclick="fetchMapPoint(13,'Locations')">K.K. Leung Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-16"><a rel="Locations;16" href="javascript:void(0);" onclick="fetchMapPoint(16,'Locations')">Kadoorie Biological Sciences Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-19"><a rel="Locations;19" href="javascript:void(0);" onclick="fetchMapPoint(19,'Locations')">Knowles Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-178"><a rel="Locations;178" href="javascript:void(0);" onclick="fetchMapPoint(178,'Locations')">Lee Shau Kee Lecture Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-25"><a rel="Locations;25" href="javascript:void(0);" onclick="fetchMapPoint(25,'Locations')">Library Building (New Wing)</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-28"><a rel="Locations;28" href="javascript:void(0);" onclick="fetchMapPoint(28,'Locations')">Library Building (Old Wing)</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-190"><a rel="Locations;190" href="javascript:void(0);" onclick="fetchMapPoint(190,'Locations')">Lily Pond</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-31"><a rel="Locations;31" href="javascript:void(0);" onclick="fetchMapPoint(31,'Locations')">Loke Yew Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-181"><a rel="Locations;181" href="javascript:void(0);" onclick="fetchMapPoint(181,'Locations')">Lui Che Woo Law Library</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-34"><a rel="Locations;34" href="javascript:void(0);" onclick="fetchMapPoint(34,'Locations')">Main Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-37"><a rel="Locations;37" href="javascript:void(0);" onclick="fetchMapPoint(37,'Locations')">May Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-40"><a rel="Locations;40" href="javascript:void(0);" onclick="fetchMapPoint(40,'Locations')">Meng Wah Complex</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-43"><a rel="Locations;43" href="javascript:void(0);" onclick="fetchMapPoint(43,'Locations')">Pao Siu Loong Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-46"><a rel="Locations;46" href="javascript:void(0);" onclick="fetchMapPoint(46,'Locations')">Rayson Huang Theatre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-49"><a rel="Locations;49" href="javascript:void(0);" onclick="fetchMapPoint(49,'Locations')">Robert Black College</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-52"><a rel="Locations;52" href="javascript:void(0);" onclick="fetchMapPoint(52,'Locations')">Run Run Shaw Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-175"><a rel="Locations;175" href="javascript:void(0);" onclick="fetchMapPoint(175,'Locations')">Run Run Shaw Heritage House</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-174"><a rel="Locations;174" href="javascript:void(0);" onclick="fetchMapPoint(174,'Locations')">Run Run Shaw Tower</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-55"><a rel="Locations;55" href="javascript:void(0);" onclick="fetchMapPoint(55,'Locations')">Runme Shaw Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-11"><a rel="Locations;11" href="javascript:void(0);" onclick="fetchMapPoint(11,'Locations')">Simon K.Y. Lee Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-192"><a rel="Locations;192" href="javascript:void(0);" onclick="fetchMapPoint(192,'Locations')">Sun Yat-sen Place </a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-193"><a rel="Locations;193" href="javascript:void(0);" onclick="fetchMapPoint(193,'Locations')">Sun Yat-sen Steps</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-23"><a rel="Locations;23" href="javascript:void(0);" onclick="fetchMapPoint(23,'Locations')">Swire Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-26"><a rel="Locations;26" href="javascript:void(0);" onclick="fetchMapPoint(26,'Locations')">T.T. Tsui Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-29"><a rel="Locations;29" href="javascript:void(0);" onclick="fetchMapPoint(29,'Locations')">Tang Chi Ngong Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-187"><a rel="Locations;187" href="javascript:void(0);" onclick="fetchMapPoint(187,'Locations')">The Jockey Club Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-173"><a rel="Locations;173" href="javascript:void(0);" onclick="fetchMapPoint(173,'Locations')">The Jockey Club Tower</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-184"><a rel="Locations;184" href="javascript:void(0);" onclick="fetchMapPoint(184,'Locations')">The University of Hong Kong Visitor Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-38"><a rel="Locations;38" href="javascript:void(0);" onclick="fetchMapPoint(38,'Locations')">University Drive No. 2</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-41"><a rel="Locations;41" href="javascript:void(0);" onclick="fetchMapPoint(41,'Locations')">University Lodge</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-185"><a rel="Locations;185" href="javascript:void(0);" onclick="fetchMapPoint(185,'Locations')">Wong Chuang Lai Wah Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-186"><a rel="Locations;186" href="javascript:void(0);" onclick="fetchMapPoint(186,'Locations')">Wong Chue Meng Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-56"><a rel="Locations;56" href="javascript:void(0);" onclick="fetchMapPoint(56,'Locations')">Yam Pak Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-176"><a rel="Locations;176" href="javascript:void(0);" onclick="fetchMapPoint(176,'Locations')">Yu Chun Keung Tam Shuk Yin Learning Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-177"><a rel="Locations;177" href="javascript:void(0);" onclick="fetchMapPoint(177,'Locations')">Yu Chun Keung Tam Shuk Yin Lecture Theatre</a></li></ul><ul class="navmenusectionheader">Sassoon Road Campus</ul><ul class="navmenusectionbody"><li class="navmenuhover clickable-a" id="NavMenu-Locations-216"><a rel="Locations;216" href="javascript:void(0);" onclick="fetchMapPoint(216,'Locations')">3 Sassoon Road </a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-61"><a rel="Locations;61" href="javascript:void(0);" onclick="fetchMapPoint(61,'Locations')">Clinical Pathology Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-64"><a rel="Locations;64" href="javascript:void(0);" onclick="fetchMapPoint(64,'Locations')">Dexter H.C. Man Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-66"><a rel="Locations;66" href="javascript:void(0);" onclick="fetchMapPoint(66,'Locations')">Estates Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-162"><a rel="Locations;162" href="javascript:void(0);" onclick="fetchMapPoint(162,'Locations')">Faculty of Medicine Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-68"><a rel="Locations;68" href="javascript:void(0);" onclick="fetchMapPoint(68,'Locations')">Felix Villas</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-74"><a rel="Locations;74" href="javascript:void(0);" onclick="fetchMapPoint(74,'Locations')">Henry Fok Health and Fitness Complex</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-75"><a rel="Locations;75" href="javascript:void(0);" onclick="fetchMapPoint(75,'Locations')">Henry Fok Swimming Pool</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-78"><a rel="Locations;78" href="javascript:void(0);" onclick="fetchMapPoint(78,'Locations')">Jockey Club Building for Interdisciplinary Research</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-89"><a rel="Locations;89" href="javascript:void(0);" onclick="fetchMapPoint(89,'Locations')">Laboratory Animal Unit</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-90"><a rel="Locations;90" href="javascript:void(0);" onclick="fetchMapPoint(90,'Locations')">Laboratory Block</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-92"><a rel="Locations;92" href="javascript:void(0);" onclick="fetchMapPoint(92,'Locations')">Lee Hysan Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-99"><a rel="Locations;99" href="javascript:void(0);" onclick="fetchMapPoint(99,'Locations')">Madam S.H. Ho Residence for Medical Students</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-103"><a rel="Locations;103" href="javascript:void(0);" onclick="fetchMapPoint(103,'Locations')">Middleton Towers  Block 1</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-104"><a rel="Locations;104" href="javascript:void(0);" onclick="fetchMapPoint(104,'Locations')">Middleton Towers  Block 2</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-105"><a rel="Locations;105" href="javascript:void(0);" onclick="fetchMapPoint(105,'Locations')">Middleton Towers  Block 3</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-107"><a rel="Locations;107" href="javascript:void(0);" onclick="fetchMapPoint(107,'Locations')">New Alberose</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-108"><a rel="Locations;108" href="javascript:void(0);" onclick="fetchMapPoint(108,'Locations')">New Clinical Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-109"><a rel="Locations;109" href="javascript:void(0);" onclick="fetchMapPoint(109,'Locations')">Old Alberose</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-113"><a rel="Locations;113" href="javascript:void(0);" onclick="fetchMapPoint(113,'Locations')">Patrick Manson Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-114"><a rel="Locations;114" href="javascript:void(0);" onclick="fetchMapPoint(114,'Locations')">Pauline Chan Building</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-115"><a rel="Locations;115" href="javascript:void(0);" onclick="fetchMapPoint(115,'Locations')">Pine Court Blk 1</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-116"><a rel="Locations;116" href="javascript:void(0);" onclick="fetchMapPoint(116,'Locations')">Pine Court Blk 2</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-117"><a rel="Locations;117" href="javascript:void(0);" onclick="fetchMapPoint(117,'Locations')">Pine Court Blk 3</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-118"><a rel="Locations;118" href="javascript:void(0);" onclick="fetchMapPoint(118,'Locations')">Pine Grove</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-119"><a rel="Locations;119" href="javascript:void(0);" onclick="fetchMapPoint(119,'Locations')">Pokfulam Amenities Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-121"><a rel="Locations;121" href="javascript:void(0);" onclick="fetchMapPoint(121,'Locations')">Queen Mary Hospital, Block K</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-122"><a rel="Locations;122" href="javascript:void(0);" onclick="fetchMapPoint(122,'Locations')">Queen Mary Hospital, Professorial Block</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-123"><a rel="Locations;123" href="javascript:void(0);" onclick="fetchMapPoint(123,'Locations')">R.C. Lee Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-127"><a rel="Locations;127" href="javascript:void(0);" onclick="fetchMapPoint(127,'Locations')">Rodrigues Court</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-134"><a rel="Locations;134" href="javascript:void(0);" onclick="fetchMapPoint(134,'Locations')">Stanley Ho Sports Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-141"><a rel="Locations;141" href="javascript:void(0);" onclick="fetchMapPoint(141,'Locations')">Tam Gardens</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-142"><a rel="Locations;142" href="javascript:void(0);" onclick="fetchMapPoint(142,'Locations')">Tam Towers</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-147"><a rel="Locations;147" href="javascript:void(0);" onclick="fetchMapPoint(147,'Locations')">University Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-149"><a rel="Locations;149" href="javascript:void(0);" onclick="fetchMapPoint(149,'Locations')">Wei Lun Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-150"><a rel="Locations;150" href="javascript:void(0);" onclick="fetchMapPoint(150,'Locations')">William M.W. Mong Block</a></li></ul><ul class="navmenusectionheader">Other Campuses</ul><ul class="navmenusectionbody"><li class="navmenuhover clickable-a" id="NavMenu-Locations-63"><a rel="Locations;63" href="javascript:void(0);" onclick="fetchMapPoint(63,'Locations')">Cyberport</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-77"><a rel="Locations;77" href="javascript:void(0);" onclick="fetchMapPoint(77,'Locations')">Hing Wai Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-79"><a rel="Locations;79" href="javascript:void(0);" onclick="fetchMapPoint(79,'Locations')">Ho Tim Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-189"><a rel="Locations;189" href="javascript:void(0);" onclick="fetchMapPoint(189,'Locations')">Jockey Club Student Village III</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-86"><a rel="Locations;86" href="javascript:void(0);" onclick="fetchMapPoint(86,'Locations')">Kadoorie Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-87"><a rel="Locations;87" href="javascript:void(0);" onclick="fetchMapPoint(87,'Locations')">Kennedy Town Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-91"><a rel="Locations;91" href="javascript:void(0);" onclick="fetchMapPoint(91,'Locations')">Lady Ho Tung Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-93"><a rel="Locations;93" href="javascript:void(0);" onclick="fetchMapPoint(93,'Locations')">Lee Shau Kee Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-106"><a rel="Locations;106" href="javascript:void(0);" onclick="fetchMapPoint(106,'Locations')">Morrison Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-69"><a rel="Locations;69" href="javascript:void(0);" onclick="fetchMapPoint(69,'Locations')">Pokfield Campus (in progress)</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-120"><a rel="Locations;120" href="javascript:void(0);" onclick="fetchMapPoint(120,'Locations')">Prince Philip Dental Hospital</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-125"><a rel="Locations;125" href="javascript:void(0);" onclick="fetchMapPoint(125,'Locations')">Ricci Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-131"><a rel="Locations;131" href="javascript:void(0);" onclick="fetchMapPoint(131,'Locations')">SPACE Admiralty Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-132"><a rel="Locations;132" href="javascript:void(0);" onclick="fetchMapPoint(132,'Locations')">SPACE Cyberport 1</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-133"><a rel="Locations;133" href="javascript:void(0);" onclick="fetchMapPoint(133,'Locations')">St. John's College</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-136"><a rel="Locations;136" href="javascript:void(0);" onclick="fetchMapPoint(136,'Locations')">Starr Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-137"><a rel="Locations;137" href="javascript:void(0);" onclick="fetchMapPoint(137,'Locations')">Suen Chi Sun Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Locations-139"><a rel="Locations;139" href="javascript:void(0);" onclick="fetchMapPoint(139,'Locations')">Swire Institute of Marine Science</a></li></ul>	  </ul>
+	  </div>
+	  </div>
+  
+   <div id="tab_2_contents" class="tab_contents">
+	  <div class="searchbox">
+		  <span class="searchbox"><input type="text" name="departmentsearchbox" id="departmentsearchbox"></span><span class="searchbtn"><img src="images/search_btn.png"></span>
+	  </div>
+	  <div class="navitemlist">
+	  <ul id="departmentlist" >
+      <li class="navmenuhover clickable-a" id="NavMenu-Department-184"><a rel="Department;184" href="javascript:void(0);" onclick="fetchMapPoint(184,'Department')">Academic Advising Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-176"><a rel="Department;176" href="javascript:void(0);" onclick="fetchMapPoint(176,'Department')">Academic Development and Quality Assurance Section</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-186"><a rel="Department;186" href="javascript:void(0);" onclick="fetchMapPoint(186,'Department')">Academic Liaison Section</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-198"><a rel="Department;198" href="javascript:void(0);" onclick="fetchMapPoint(198,'Department')">Academic Staff Association of The University of Hong Kong</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-181"><a rel="Department;181" href="javascript:void(0);" onclick="fetchMapPoint(181,'Department')">Academic Support and Admissions Section</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-1"><a rel="Department;1" href="javascript:void(0);" onclick="fetchMapPoint(1,'Department')">Advancement in Inclusive and Special Education, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-197"><a rel="Department;197" href="javascript:void(0);" onclick="fetchMapPoint(197,'Department')">Advancement of Chinese Language Education and Research, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-144"><a rel="Department;144" href="javascript:void(0);" onclick="fetchMapPoint(144,'Department')">Ageing, Sau Po Centre on</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-173"><a rel="Department;173" href="javascript:void(0);" onclick="fetchMapPoint(173,'Department')">AIDS Institute</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-3"><a rel="Department;3" href="javascript:void(0);" onclick="fetchMapPoint(3,'Department')">American Studies, Centre of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-4"><a rel="Department;4" href="javascript:void(0);" onclick="fetchMapPoint(4,'Department')">Anaesthesiology, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-6"><a rel="Department;6" href="javascript:void(0);" onclick="fetchMapPoint(6,'Department')">Anthropological Research, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-61"><a rel="Department;61" href="javascript:void(0);" onclick="fetchMapPoint(61,'Department')">Applied English Studies, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-7"><a rel="Department;7" href="javascript:void(0);" onclick="fetchMapPoint(7,'Department')">Architecture, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-8"><a rel="Department;8" href="javascript:void(0);" onclick="fetchMapPoint(8,'Department')">Architecture, Faculty of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-9"><a rel="Department;9" href="javascript:void(0);" onclick="fetchMapPoint(9,'Department')">Arts, Faculty of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-10"><a rel="Department;10" href="javascript:void(0);" onclick="fetchMapPoint(10,'Department')">Asia Case Research Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-204"><a rel="Department;204" href="javascript:void(0);" onclick="fetchMapPoint(204,'Department')">Asia Global Institute  </a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-11"><a rel="Department;11" href="javascript:void(0);" onclick="fetchMapPoint(11,'Department')">Asian Institute of International Financial Law</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-12"><a rel="Department;12" href="javascript:void(0);" onclick="fetchMapPoint(12,'Department')">Asian Tall Buildings and Urban Habitat, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-13"><a rel="Department;13" href="javascript:void(0);" onclick="fetchMapPoint(13,'Department')">Behavioural Health, Centre on</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-14"><a rel="Department;14" href="javascript:void(0);" onclick="fetchMapPoint(14,'Department')">Behavioural Sciences, Unit for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-16"><a rel="Department;16" href="javascript:void(0);" onclick="fetchMapPoint(16,'Department')">Biological Sciences, School of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-15"><a rel="Department;15" href="javascript:void(0);" onclick="fetchMapPoint(15,'Department')">Biomedical Sciences, School of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-17"><a rel="Department;17" href="javascript:void(0);" onclick="fetchMapPoint(17,'Department')">Buddhist Studies, Centre of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-18"><a rel="Department;18" href="javascript:void(0);" onclick="fetchMapPoint(18,'Department')">Business and Economics, Faculty of (HKU Business School) </a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-20"><a rel="Department;20" href="javascript:void(0);" onclick="fetchMapPoint(20,'Department')">Cardiovascular Science and Medicine, Institute of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-22"><a rel="Department;22" href="javascript:void(0);" onclick="fetchMapPoint(22,'Department')">Chemistry, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-23"><a rel="Department;23" href="javascript:void(0);" onclick="fetchMapPoint(23,'Department')">China Affairs Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-95"><a rel="Department;95" href="javascript:void(0);" onclick="fetchMapPoint(95,'Department')">China Development Studies, International Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-24"><a rel="Department;24" href="javascript:void(0);" onclick="fetchMapPoint(24,'Department')">China Financial Research, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-179"><a rel="Department;179" href="javascript:void(0);" onclick="fetchMapPoint(179,'Department')">Chinese Law, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-25"><a rel="Department;25" href="javascript:void(0);" onclick="fetchMapPoint(25,'Department')">Chinese Management Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-26"><a rel="Department;26" href="javascript:void(0);" onclick="fetchMapPoint(26,'Department')">Chinese Medicine, School of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-27"><a rel="Department;27" href="javascript:void(0);" onclick="fetchMapPoint(27,'Department')">Chinese, School of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-28"><a rel="Department;28" href="javascript:void(0);" onclick="fetchMapPoint(28,'Department')">Chong Yuet Ming Amenities Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-206"><a rel="Department;206" href="javascript:void(0);" onclick="fetchMapPoint(206,'Department')">Chong Yuet Ming Cultural Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-29"><a rel="Department;29" href="javascript:void(0);" onclick="fetchMapPoint(29,'Department')">Civil Engineering, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-30"><a rel="Department;30" href="javascript:void(0);" onclick="fetchMapPoint(30,'Department')">Civil Society and Governance, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-33"><a rel="Department;33" href="javascript:void(0);" onclick="fetchMapPoint(33,'Department')">Clinical Oncology, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-34"><a rel="Department;34" href="javascript:void(0);" onclick="fetchMapPoint(34,'Department')">Clinical Trials Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-200"><a rel="Department;200" href="javascript:void(0);" onclick="fetchMapPoint(200,'Department')">Common Core Curriculum Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-67"><a rel="Department;67" href="javascript:void(0);" onclick="fetchMapPoint(67,'Department')">Communications and Public Affairs Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-37"><a rel="Department;37" href="javascript:void(0);" onclick="fetchMapPoint(37,'Department')">Comparative and Public Law, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-38"><a rel="Department;38" href="javascript:void(0);" onclick="fetchMapPoint(38,'Department')">Comparative Education Research Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-39"><a rel="Department;39" href="javascript:void(0);" onclick="fetchMapPoint(39,'Department')">Comparative Literature, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-41"><a rel="Department;41" href="javascript:void(0);" onclick="fetchMapPoint(41,'Department')">Computer Science, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-42"><a rel="Department;42" href="javascript:void(0);" onclick="fetchMapPoint(42,'Department')">Construct I.T., Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-43"><a rel="Department;43" href="javascript:void(0);" onclick="fetchMapPoint(43,'Department')">Criminology, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-45"><a rel="Department;45" href="javascript:void(0);" onclick="fetchMapPoint(45,'Department')">Cyberport Institute of Hong Kong</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-46"><a rel="Department;46" href="javascript:void(0);" onclick="fetchMapPoint(46,'Department')">Dentistry, Faculty of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-68"><a rel="Department;68" href="javascript:void(0);" onclick="fetchMapPoint(68,'Department')">Department of Ophthalmology</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-47"><a rel="Department;47" href="javascript:void(0);" onclick="fetchMapPoint(47,'Department')">Development and Alumni Affairs Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-21"><a rel="Department;21" href="javascript:void(0);" onclick="fetchMapPoint(21,'Department')">Development and Resources for Students, Centre of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-48"><a rel="Department;48" href="javascript:void(0);" onclick="fetchMapPoint(48,'Department')">Diagnostic Radiology, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-49"><a rel="Department;49" href="javascript:void(0);" onclick="fetchMapPoint(49,'Department')">Duchess of Kent Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-52"><a rel="Department;52" href="javascript:void(0);" onclick="fetchMapPoint(52,'Department')">E-Commerce Infrastructure Development, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-50"><a rel="Department;50" href="javascript:void(0);" onclick="fetchMapPoint(50,'Department')">Earth Sciences, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-54"><a rel="Department;54" href="javascript:void(0);" onclick="fetchMapPoint(54,'Department')">Education, Faculty of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-55"><a rel="Department;55" href="javascript:void(0);" onclick="fetchMapPoint(55,'Department')">Educational Leadership, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-96"><a rel="Department;96" href="javascript:void(0);" onclick="fetchMapPoint(96,'Department')">Electric Vehicles, International Research Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-56"><a rel="Department;56" href="javascript:void(0);" onclick="fetchMapPoint(56,'Department')">Electrical and Electronic Engineering, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-57"><a rel="Department;57" href="javascript:void(0);" onclick="fetchMapPoint(57,'Department')">Electrical Energy Systems, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-58"><a rel="Department;58" href="javascript:void(0);" onclick="fetchMapPoint(58,'Department')">Electron Microscope Unit</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-51"><a rel="Department;51" href="javascript:void(0);" onclick="fetchMapPoint(51,'Department')">Emerging Technologies Institute</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-59"><a rel="Department;59" href="javascript:void(0);" onclick="fetchMapPoint(59,'Department')">Endocrinology and Diabetes, Centre of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-60"><a rel="Department;60" href="javascript:void(0);" onclick="fetchMapPoint(60,'Department')">Engineering, Faculty of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-62"><a rel="Department;62" href="javascript:void(0);" onclick="fetchMapPoint(62,'Department')">English, School of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-2"><a rel="Department;2" href="javascript:void(0);" onclick="fetchMapPoint(2,'Department')">Enhancement of Teaching and Learning, Centre for the</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-63"><a rel="Department;63" href="javascript:void(0);" onclick="fetchMapPoint(63,'Department')">Equal Opportunity Unit</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-64"><a rel="Department;64" href="javascript:void(0);" onclick="fetchMapPoint(64,'Department')">Estates Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-66"><a rel="Department;66" href="javascript:void(0);" onclick="fetchMapPoint(66,'Department')">Examinations Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-69"><a rel="Department;69" href="javascript:void(0);" onclick="fetchMapPoint(69,'Department')">Family Medicine and Primary Care, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-192"><a rel="Department;192" href="javascript:void(0);" onclick="fetchMapPoint(192,'Department')">Finance and Enterprises Office (Campus Office)</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-70"><a rel="Department;70" href="javascript:void(0);" onclick="fetchMapPoint(70,'Department')">Finance and Enterprises Office (Off-Campus Office)</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-71"><a rel="Department;71" href="javascript:void(0);" onclick="fetchMapPoint(71,'Department')">Financial Innovation and Risk Management, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-72"><a rel="Department;72" href="javascript:void(0);" onclick="fetchMapPoint(72,'Department')">Fine Arts, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-73"><a rel="Department;73" href="javascript:void(0);" onclick="fetchMapPoint(73,'Department')">Fong Shu Chuen Amenities Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-74"><a rel="Department;74" href="javascript:void(0);" onclick="fetchMapPoint(74,'Department')">General Education Unit</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-75"><a rel="Department;75" href="javascript:void(0);" onclick="fetchMapPoint(75,'Department')">Genomic Sciences, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-76"><a rel="Department;76" href="javascript:void(0);" onclick="fetchMapPoint(76,'Department')">Geography, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-155"><a rel="Department;155" href="javascript:void(0);" onclick="fetchMapPoint(155,'Department')">Globalization and Cultures, Centre for the Study of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-77"><a rel="Department;77" href="javascript:void(0);" onclick="fetchMapPoint(77,'Department')">Graduate House</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-78"><a rel="Department;78" href="javascript:void(0);" onclick="fetchMapPoint(78,'Department')">Graduate School</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-79"><a rel="Department;79" href="javascript:void(0);" onclick="fetchMapPoint(79,'Department')">History, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-207"><a rel="Department;207" href="javascript:void(0);" onclick="fetchMapPoint(207,'Department')">HKU Black Box</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-201"><a rel="Department;201" href="javascript:void(0);" onclick="fetchMapPoint(201,'Department')">HKU Employees Union</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-81"><a rel="Department;81" href="javascript:void(0);" onclick="fetchMapPoint(81,'Department')">HKU School of Professional and Continuing Education</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-194"><a rel="Department;194" href="javascript:void(0);" onclick="fetchMapPoint(194,'Department')">HKU Staff Association</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-202"><a rel="Department;202" href="javascript:void(0);" onclick="fetchMapPoint(202,'Department')">HKU Visitor Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-82"><a rel="Department;82" href="javascript:void(0);" onclick="fetchMapPoint(82,'Department')">HKU-Pasteur Research Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-83"><a rel="Department;83" href="javascript:void(0);" onclick="fetchMapPoint(83,'Department')">Hong Kong Institute for the Humanities and Social Sciences</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-84"><a rel="Department;84" href="javascript:void(0);" onclick="fetchMapPoint(84,'Department')">Hong Kong Institute of Economics and Business Strategy</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-161"><a rel="Department;161" href="javascript:void(0);" onclick="fetchMapPoint(161,'Department')">Hong Kong Jockey Club Centre for Suicide Research and Prevention</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-195"><a rel="Department;195" href="javascript:void(0);" onclick="fetchMapPoint(195,'Department')">Hong Kong University Press</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-87"><a rel="Department;87" href="javascript:void(0);" onclick="fetchMapPoint(87,'Department')">Hornell Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-91"><a rel="Department;91" href="javascript:void(0);" onclick="fetchMapPoint(91,'Department')">Hsu Long Sing Amenities Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-88"><a rel="Department;88" href="javascript:void(0);" onclick="fetchMapPoint(88,'Department')">Human Development and Birth Defects, Centre of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-90"><a rel="Department;90" href="javascript:void(0);" onclick="fetchMapPoint(90,'Department')">Human Resource Section</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-177"><a rel="Department;177" href="javascript:void(0);" onclick="fetchMapPoint(177,'Department')">Humanities and Medicine, Centre for the</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-171"><a rel="Department;171" href="javascript:void(0);" onclick="fetchMapPoint(171,'Department')">Humanities, School of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-92"><a rel="Department;92" href="javascript:void(0);" onclick="fetchMapPoint(92,'Department')">Industrial and Manufacturing Systems Engineering, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-93"><a rel="Department;93" href="javascript:void(0);" onclick="fetchMapPoint(93,'Department')">Information Technology in Education, Centre for</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-40"><a rel="Department;40" href="javascript:void(0);" onclick="fetchMapPoint(40,'Department')">Information Technology Services</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-94"><a rel="Department;94" href="javascript:void(0);" onclick="fetchMapPoint(94,'Department')">Internal Audit Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-121"><a rel="Department;121" href="javascript:void(0);" onclick="fetchMapPoint(121,'Department')">International Student Exchange, Academic Liaison Section, Office of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-97"><a rel="Department;97" href="javascript:void(0);" onclick="fetchMapPoint(97,'Department')">Jao Tsung-I Petite Ecole</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-98"><a rel="Department;98" href="javascript:void(0);" onclick="fetchMapPoint(98,'Department')">Japanese Studies, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-99"><a rel="Department;99" href="javascript:void(0);" onclick="fetchMapPoint(99,'Department')">Jockey Club Research and Information Centre for Landslip Prevention and Land Development</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-100"><a rel="Department;100" href="javascript:void(0);" onclick="fetchMapPoint(100,'Department')">Journalism and Media Studies Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-203"><a rel="Department;203" href="javascript:void(0);" onclick="fetchMapPoint(203,'Department')">Kadoorie Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-174"><a rel="Department;174" href="javascript:void(0);" onclick="fetchMapPoint(174,'Department')">Kadoorie Institute, The</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-180"><a rel="Department;180" href="javascript:void(0);" onclick="fetchMapPoint(180,'Department')">Knowledge Exchange Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-101"><a rel="Department;101" href="javascript:void(0);" onclick="fetchMapPoint(101,'Department')">Laboratory Animal Unit</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-102"><a rel="Department;102" href="javascript:void(0);" onclick="fetchMapPoint(102,'Department')">Lady Ho Tung Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-182"><a rel="Department;182" href="javascript:void(0);" onclick="fetchMapPoint(182,'Department')">Landscape Architecture, Division of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-199"><a rel="Department;199" href="javascript:void(0);" onclick="fetchMapPoint(199,'Department')">Law and Technology Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-104"><a rel="Department;104" href="javascript:void(0);" onclick="fetchMapPoint(104,'Department')">Law, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-105"><a rel="Department;105" href="javascript:void(0);" onclick="fetchMapPoint(105,'Department')">Law, Faculty of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-106"><a rel="Department;106" href="javascript:void(0);" onclick="fetchMapPoint(106,'Department')">Lee Chi Hung Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-107"><a rel="Department;107" href="javascript:void(0);" onclick="fetchMapPoint(107,'Department')">Lee Hysan Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-108"><a rel="Department;108" href="javascript:void(0);" onclick="fetchMapPoint(108,'Department')">Linguistics, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-109"><a rel="Department;109" href="javascript:void(0);" onclick="fetchMapPoint(109,'Department')">Management Information Unit</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-110"><a rel="Department;110" href="javascript:void(0);" onclick="fetchMapPoint(110,'Department')">Mathematical Research, Institute of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-111"><a rel="Department;111" href="javascript:void(0);" onclick="fetchMapPoint(111,'Department')">Mathematics, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-112"><a rel="Department;112" href="javascript:void(0);" onclick="fetchMapPoint(112,'Department')">Mechanical Engineering, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-113"><a rel="Department;113" href="javascript:void(0);" onclick="fetchMapPoint(113,'Department')">Medical and Health Sciences Education, Institute of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-114"><a rel="Department;114" href="javascript:void(0);" onclick="fetchMapPoint(114,'Department')">Medicine, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-115"><a rel="Department;115" href="javascript:void(0);" onclick="fetchMapPoint(115,'Department')">Medicine, Li Ka Shing Faculty of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-116"><a rel="Department;116" href="javascript:void(0);" onclick="fetchMapPoint(116,'Department')">Microbiology, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-170"><a rel="Department;170" href="javascript:void(0);" onclick="fetchMapPoint(170,'Department')">Modern Languages and Cultures, School of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-187"><a rel="Department;187" href="javascript:void(0);" onclick="fetchMapPoint(187,'Department')">Morrison Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-117"><a rel="Department;117" href="javascript:void(0);" onclick="fetchMapPoint(117,'Department')">Music, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-118"><a rel="Department;118" href="javascript:void(0);" onclick="fetchMapPoint(118,'Department')">Nonlinear Mechanics, Centre of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-119"><a rel="Department;119" href="javascript:void(0);" onclick="fetchMapPoint(119,'Department')">Nursing, School of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-120"><a rel="Department;120" href="javascript:void(0);" onclick="fetchMapPoint(120,'Department')">Obstetrics and Gynaecology, Department</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-122"><a rel="Department;122" href="javascript:void(0);" onclick="fetchMapPoint(122,'Department')">Orthopaedics and Traumatology, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-123"><a rel="Department;123" href="javascript:void(0);" onclick="fetchMapPoint(123,'Department')">Paediatrics and Adolescent Medicine, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-124"><a rel="Department;124" href="javascript:void(0);" onclick="fetchMapPoint(124,'Department')">Pathology, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-125"><a rel="Department;125" href="javascript:void(0);" onclick="fetchMapPoint(125,'Department')">Pharmacology and Pharmacy, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-126"><a rel="Department;126" href="javascript:void(0);" onclick="fetchMapPoint(126,'Department')">Philosophy, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-127"><a rel="Department;127" href="javascript:void(0);" onclick="fetchMapPoint(127,'Department')">Physics, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-131"><a rel="Department;131" href="javascript:void(0);" onclick="fetchMapPoint(131,'Department')">Pokfulam Amenities Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-129"><a rel="Department;129" href="javascript:void(0);" onclick="fetchMapPoint(129,'Department')">Politics and Public Administration, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-130"><a rel="Department;130" href="javascript:void(0);" onclick="fetchMapPoint(130,'Department')">Poon Kam Kai Institute of Management</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-132"><a rel="Department;132" href="javascript:void(0);" onclick="fetchMapPoint(132,'Department')">Professional Legal Education, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-133"><a rel="Department;133" href="javascript:void(0);" onclick="fetchMapPoint(133,'Department')">Psychiatry, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-134"><a rel="Department;134" href="javascript:void(0);" onclick="fetchMapPoint(134,'Department')">Psychology, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-135"><a rel="Department;135" href="javascript:void(0);" onclick="fetchMapPoint(135,'Department')">Public Health, School of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-193"><a rel="Department;193" href="javascript:void(0);" onclick="fetchMapPoint(193,'Department')">Public Opinion Programme</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-136"><a rel="Department;136" href="javascript:void(0);" onclick="fetchMapPoint(136,'Department')">R. C. Lee Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-137"><a rel="Department;137" href="javascript:void(0);" onclick="fetchMapPoint(137,'Department')">Real Estate and Construction, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-139"><a rel="Department;139" href="javascript:void(0);" onclick="fetchMapPoint(139,'Department')">Registry</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-140"><a rel="Department;140" href="javascript:void(0);" onclick="fetchMapPoint(140,'Department')">Research Services Section</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-141"><a rel="Department;141" href="javascript:void(0);" onclick="fetchMapPoint(141,'Department')">Ricci Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-142"><a rel="Department;142" href="javascript:void(0);" onclick="fetchMapPoint(142,'Department')">Robert Black College</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-143"><a rel="Department;143" href="javascript:void(0);" onclick="fetchMapPoint(143,'Department')">Safety Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-188"><a rel="Department;188" href="javascript:void(0);" onclick="fetchMapPoint(188,'Department')">School Liaison Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-103"><a rel="Department;103" href="javascript:void(0);" onclick="fetchMapPoint(103,'Department')">School of Modern Languages and Cultures</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-145"><a rel="Department;145" href="javascript:void(0);" onclick="fetchMapPoint(145,'Department')">Science, Faculty of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-146"><a rel="Department;146" href="javascript:void(0);" onclick="fetchMapPoint(146,'Department')">Simon K. Y. Lee Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-147"><a rel="Department;147" href="javascript:void(0);" onclick="fetchMapPoint(147,'Department')">Social Sciences Research Centre</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-148"><a rel="Department;148" href="javascript:void(0);" onclick="fetchMapPoint(148,'Department')">Social Sciences, Faculty of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-149"><a rel="Department;149" href="javascript:void(0);" onclick="fetchMapPoint(149,'Department')">Social Work and Social Administration, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-150"><a rel="Department;150" href="javascript:void(0);" onclick="fetchMapPoint(150,'Department')">Sociology, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-151"><a rel="Department;151" href="javascript:void(0);" onclick="fetchMapPoint(151,'Department')">St. John's College</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-152"><a rel="Department;152" href="javascript:void(0);" onclick="fetchMapPoint(152,'Department')">Starr Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-153"><a rel="Department;153" href="javascript:void(0);" onclick="fetchMapPoint(153,'Department')">Statistics and Actuarial Science, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-154"><a rel="Department;154" href="javascript:void(0);" onclick="fetchMapPoint(154,'Department')">Strategic Planning and Provost's Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-156"><a rel="Department;156" href="javascript:void(0);" onclick="fetchMapPoint(156,'Department')">Surgery, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-185"><a rel="Department;185" href="javascript:void(0);" onclick="fetchMapPoint(185,'Department')">Sustainability Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-190"><a rel="Department;190" href="javascript:void(0);" onclick="fetchMapPoint(190,'Department')">Swire Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-191"><a rel="Department;191" href="javascript:void(0);" onclick="fetchMapPoint(191,'Department')">Swire Institute of Marine Science</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-172"><a rel="Department;172" href="javascript:void(0);" onclick="fetchMapPoint(172,'Department')">Technology Transfer Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-162"><a rel="Department;162" href="javascript:void(0);" onclick="fetchMapPoint(162,'Department')">University Hall</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-163"><a rel="Department;163" href="javascript:void(0);" onclick="fetchMapPoint(163,'Department')">University Health Service</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-164"><a rel="Department;164" href="javascript:void(0);" onclick="fetchMapPoint(164,'Department')">University Libraries</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-165"><a rel="Department;165" href="javascript:void(0);" onclick="fetchMapPoint(165,'Department')">University Museum and Art Gallery</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-175"><a rel="Department;175" href="javascript:void(0);" onclick="fetchMapPoint(175,'Department')">Urban Planning and Design, Department of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-183"><a rel="Department;183" href="javascript:void(0);" onclick="fetchMapPoint(183,'Department')">Urban Studies and Urban Planning, Centre of</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-166"><a rel="Department;166" href="javascript:void(0);" onclick="fetchMapPoint(166,'Department')">Versitech Limited</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-167"><a rel="Department;167" href="javascript:void(0);" onclick="fetchMapPoint(167,'Department')">Vice-Chancellor's Office</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-168"><a rel="Department;168" href="javascript:void(0);" onclick="fetchMapPoint(168,'Department')">Wah Ching Centre of Research on Education in China</a></li><li class="navmenuhover clickable-a" id="NavMenu-Department-169"><a rel="Department;169" href="javascript:void(0);" onclick="fetchMapPoint(169,'Department')">Wei Lun Hall</a></li>	 
+	  </ul>
+	  </div>
+   </div>
+   
+   
+   <div id="tab_3_contents" class="tab_contents">
+     <div class="navitemlist">
+	  <ul id="facilitylist" >
+   <li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5000af8ecbc39_apartment-3.png"></td><td style="width:130px;">Accommodation</td><td style="width:20px;"><input id="NavMenu-facilities-1" name="NavMenu-facilities-1" type="checkbox"  value="1"  onclick="togglefacilities('NavMenu-facilities-1', 1)"/><label for="NavMenu-facilities-1"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-1-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5008f71d87b8c_bigcity.png"></td><td style="width:130px;">Amenities Centre</td><td style="width:20px;"><input id="NavMenu-facilities-2" name="NavMenu-facilities-2" type="checkbox"  value="2"  onclick="togglefacilities('NavMenu-facilities-2', 2)"/><label for="NavMenu-facilities-2"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-2-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_55ee46bce52e3_bficon-med-2.png"></td><td style="width:130px;">Baby Care Room</td><td style="width:20px;"><input id="NavMenu-facilities-27" name="NavMenu-facilities-27" type="checkbox"  value="27"  onclick="togglefacilities('NavMenu-facilities-27', 27)"/><label for="NavMenu-facilities-27"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-27-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5000aec8542a7_bank.png"></td><td style="width:130px;">Banking Services</td><td style="width:20px;"><input id="NavMenu-facilities-3" name="NavMenu-facilities-3" type="checkbox"  value="3"  onclick="togglefacilities('NavMenu-facilities-3', 3)"/><label for="NavMenu-facilities-3"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-3-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_4fcb91aba1733_book.png"></td><td style="width:130px;">Bookstore</td><td style="width:20px;"><input id="NavMenu-facilities-4" name="NavMenu-facilities-4" type="checkbox"  value="4"  onclick="togglefacilities('NavMenu-facilities-4', 4)"/><label for="NavMenu-facilities-4"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-4-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5000b1ccddf67_fastfood.png"></td><td style="width:130px;">Catering Outlets</td><td style="width:20px;"><input id="NavMenu-facilities-13" name="NavMenu-facilities-13" type="checkbox"  value="13"  onclick="togglefacilities('NavMenu-facilities-13', 13)"/><label for="NavMenu-facilities-13"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-13-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5000b0a3912b3_computers.png"></td><td style="width:130px;">Computing Services</td><td style="width:20px;"><input id="NavMenu-facilities-5" name="NavMenu-facilities-5" type="checkbox"  value="5"  onclick="togglefacilities('NavMenu-facilities-5', 5)"/><label for="NavMenu-facilities-5"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-5-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5000af97c02d6_firstaid.png"></td><td style="width:130px;">Health Services</td><td style="width:20px;"><input id="NavMenu-facilities-6" name="NavMenu-facilities-6" type="checkbox"  value="6"  onclick="togglefacilities('NavMenu-facilities-6', 6)"/><label for="NavMenu-facilities-6"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-6-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5000b3d5429a3_library.png"></td><td style="width:130px;">Libraries</td><td style="width:20px;"><input id="NavMenu-facilities-8" name="NavMenu-facilities-8" type="checkbox"  value="8"  onclick="togglefacilities('NavMenu-facilities-8', 8)"/><label for="NavMenu-facilities-8"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-8-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_57569683bcac7_lift.png"></td><td style="width:130px;">Lift</td><td style="width:20px;"><input id="NavMenu-facilities-29" name="NavMenu-facilities-29" type="checkbox"  value="29"  onclick="togglefacilities('NavMenu-facilities-29', 29)"/><label for="NavMenu-facilities-29"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-29-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5000b3bdd3a9c_house (1).png"></td><td style="width:130px;">Museums</td><td style="width:20px;"><input id="NavMenu-facilities-10" name="NavMenu-facilities-10" type="checkbox"  value="10"  onclick="togglefacilities('NavMenu-facilities-10', 10)"/><label for="NavMenu-facilities-10"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-10-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_4fcb92072cf19_parkinggarage.png"></td><td style="width:130px;">Parking</td><td style="width:20px;"><input id="NavMenu-facilities-11" name="NavMenu-facilities-11" type="checkbox"  value="11"  onclick="togglefacilities('NavMenu-facilities-11', 11)"/><label for="NavMenu-facilities-11"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-11-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5000af7c42500_printer-2.png"></td><td style="width:130px;">Photo-copying</td><td style="width:20px;"><input id="NavMenu-facilities-12" name="NavMenu-facilities-12" type="checkbox"  value="12"  onclick="togglefacilities('NavMenu-facilities-12', 12)"/><label for="NavMenu-facilities-12"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-12-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5000aed4b6cfd_postal.png"></td><td style="width:130px;">Postal Service</td><td style="width:20px;"><input id="NavMenu-facilities-9" name="NavMenu-facilities-9" type="checkbox"  value="9"  onclick="togglefacilities('NavMenu-facilities-9', 9)"/><label for="NavMenu-facilities-9"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-9-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5000b05253de9_tennis.png"></td><td style="width:130px;">Sports</td><td style="width:20px;"><input id="NavMenu-facilities-18" name="NavMenu-facilities-18" type="checkbox"  value="18"  onclick="togglefacilities('NavMenu-facilities-18', 18)"/><label for="NavMenu-facilities-18"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-18-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5000b3f857c54_group-2 (1).png"></td><td style="width:130px;">Student Co-operative</td><td style="width:20px;"><input id="NavMenu-facilities-14" name="NavMenu-facilities-14" type="checkbox"  value="14"  onclick="togglefacilities('NavMenu-facilities-14', 14)"/><label for="NavMenu-facilities-14"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-14-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5000b1f32d1f7_supermarket.png"></td><td style="width:130px;">Supermarket</td><td style="width:20px;"><input id="NavMenu-facilities-15" name="NavMenu-facilities-15" type="checkbox"  value="15"  onclick="togglefacilities('NavMenu-facilities-15', 15)"/><label for="NavMenu-facilities-15"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-15-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_52c2a28d8b5c7_uvision_pin.png"></td><td style="width:130px;">U-Vision</td><td style="width:20px;"><input id="NavMenu-facilities-25" name="NavMenu-facilities-25" type="checkbox"  value="25"  onclick="togglefacilities('NavMenu-facilities-25', 25)"/><label for="NavMenu-facilities-25"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-25-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5000b23e51edd_conference.png"></td><td style="width:130px;">Venues & Bookings</td><td style="width:20px;"><input id="NavMenu-facilities-16" name="NavMenu-facilities-16" type="checkbox"  value="16"  onclick="togglefacilities('NavMenu-facilities-16', 16)"/><label for="NavMenu-facilities-16"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-16-sublist"></div></li><li><table border=0 class="navmenuhover"><tr><td><img border=0 img src="./media/transfer/FacilityType_5000b27502f23_conference (1).png"></td><td style="width:130px;">Venues & Bookings  (for staff/student functions only)</td><td style="width:20px;"><input id="NavMenu-facilities-20" name="NavMenu-facilities-20" type="checkbox"  value="20"  onclick="togglefacilities('NavMenu-facilities-20', 20)"/><label for="NavMenu-facilities-20"></label></td></tr></table><div style="display:none;" id="NavMenu-facilities-20-sublist"></div></li>		 </ul>
+		 </div>
+	
+   </div>
+  </div> 
+</div>
+
+<div id="footer">
+  
+  <span style="float:left; padding:6px;">
+  For enquiries or any special assistance, please call Security Control Centre's 24-hour hotline (3917-2882).<br>
+  </span>
+  <span style="float:left; padding:6px;" id="debugzoomwindow">
+  </span>
+<!--
+  
+  <span style="float:right; padding:6px;">
+     <a href="#" target="_blank"> Privacy Policy</a>
+  </span>
+  -->
+</div>
+
+
+<div class="makerpopup-wrapper">
+    <div id="makerpopup">
+    </div>
+</div>
+
+<div id="DirectionsControl" class="DirectionsControl">
+	 <a href="#" onclick="hideDirections()"><img class="close" src="images/close.gif"></a>
+	 <h3>
+	 Driver's Route to HKU	 </h3>
+     <label for="start">
+	 <strong>Start:</strong>
+	 </label>
+	  <input id="start" name="start" size="14">
+	  
+	  <br>
+	  <label for="end">
+      <strong>To:</strong>
+	  </label>
+      <select id="end" onchange="calcRoute();">
+        <option value="The University of Hong Kong"> Main Campus</option>
+        <option value="21 Sassoon Road, Hong Kong"> Sassoon Road Campus</option>
+      </select>
+	  <br>
+	  <label>&nbsp;</label>
+	  <button onclick="calcRoute();">
+	  Search	  </button>
+ <div id="DirectionsPanel-wrapper">
+	 <div id="DirectionsPanel">
+	 </div>
+ </div>
+	  
+ </div>
+ 
+ 
+ <div id="DirectionsInsideControl" class="DirectionsControl" style="height:140px;">
+	 <a href="#" onclick="hideDirectionsInside()"><img class="close" src="images/close.gif"></a>
+	 <h3>
+	 Drive Within Main Campus	 </h3>
+     <label for="start">
+	 <strong>Start:</strong>
+	 </label>
+	  <select name="insidedriveroute_origin" id="insidedriveroute_origin" style="font-size:15px;width:180px;">
+					<option value="167">West Gate</option><option value="182">Kotewall Road</option>	 </select>
+	  <label for="end">
+      <strong>To:</strong>
+	  </label>
+		<select name="insidedriveroute_destination" id="insidedriveroute_destination" style="font-size:15px;width:180px;">
+		</select>
+	  <br>
+	  <label>&nbsp;</label>
+	  <button onclick="TopMenuTransportSearch();">
+	  Search	  </button>
+</div>
+  
+  
+  
+<!--
+ <div class="printonly">
+<img src="images/hkumap_logo.png" alt="HKU Logo, back to HKU Home Page" >
+</div>
+  -->
+  
+  
+  
+  
+<script type="text/javascript">
+
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>  
+  
+  
+  
+  
+  
+</body>
+
+</html>
